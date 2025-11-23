@@ -1,0 +1,28 @@
+# OS / Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+env/
+venv/
+
+# FastAPI data (local only)
+api_fastapi/data/
+
+# Env / secrets
+.env
+*.env
+
+# Node / frontend
+node_modules/
+pnpm-lock.yaml
+dist/
+.cache/
+*.log
+

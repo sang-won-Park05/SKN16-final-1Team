@@ -1,0 +1,33 @@
+﻿version: '3.9'
+services:
+  api_fastapi:
+    build: ./api_fastapi
+    env_file: .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ai_service_llm
+      - ai_service_stt
+      - ai_service_ocr
+  ai_service_llm:
+    build: ./ai_service_llm
+    env_file: .env
+    ports:
+      - "8001:8001"
+  ai_service_stt:
+    build: ./ai_service_stt
+    env_file: .env
+    ports:
+      - "8002:8002"
+  ai_service_ocr:
+    build: ./ai_service_ocr
+    env_file: .env
+    ports:
+      - "8003:8003"
+  frontend:
+    build: ./frontend
+    env_file: .env
+    ports:
+      - "5173:4173"
+    depends_on:
+      - api_fastapi
